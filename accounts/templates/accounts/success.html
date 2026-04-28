@@ -2,7 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+
+    <!-- IMPORTANTE para móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Verificación exitosa</title>
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -10,21 +15,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
         }
 
         .success-box {
             background: #ffffff;
-            padding: 50px 40px;
+            padding: 40px 25px;
             border-radius: 14px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             text-align: center;
+            width: 100%;
             max-width: 420px;
         }
 
         .icon {
-            font-size: 50px;
+            font-size: 60px;
             color: #22c55e;
             margin-bottom: 15px;
         }
@@ -32,29 +39,52 @@
         h2 {
             color: #1f2937;
             margin-bottom: 10px;
+            font-size: 24px;
         }
 
         p {
             color: #4b5563;
-            font-size: 15px;
+            font-size: 16px;
             margin-bottom: 25px;
+            line-height: 1.5;
         }
 
         a {
-            display: inline-block;
-            padding: 10px 18px;
+            display: block;
+            padding: 12px;
             background: #2a3fb7;
             color: white;
             border-radius: 8px;
             text-decoration: none;
             transition: 0.3s;
+            font-size: 16px;
         }
 
         a:hover {
             background: #1e2f8a;
         }
+
+        /* Ajustes extra para pantallas pequeñas */
+        @media (max-width: 480px) {
+            .success-box {
+                padding: 30px 20px;
+            }
+
+            .icon {
+                font-size: 50px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="success-box">
         <div class="icon">✔</div>
